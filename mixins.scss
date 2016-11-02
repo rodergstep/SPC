@@ -1,0 +1,23 @@
+// PSEUDOCLASSES FOR LINKS
+@mixin links ($link, $visited, $hover, $active) {
+    & {
+        color: $link;
+
+        &:visited {
+            color: $visited;
+        }
+
+        &:hover {
+            color: $hover;
+        }
+
+        &:active,
+        &:focus {
+            color: $active;
+        }
+    }
+}
+// USE
+a {
+    @include links(orange, blue, yellow, teal);
+}
