@@ -41,20 +41,6 @@ a {
 Usage .container-with-floated-children {
     @extend %clearfix;
 }
-// responsive-ratio
-@mixin responsive-ratio($x,$y, $pseudo: false) {
-    $padding: unquote( ( $y / $x ) * 100 + '%' );
-    @if $pseudo {
-        &:before {
-            @include pseudo($pos: relative);
-            width: 100%;
-            padding-top: $padding;
-        }
-    }
-    @else {
-        padding-top: $padding;
-    }
-}
 // TOOLTIP
 @mixin hui_tooltip($content: attr(data-tooltip), $direction: top) {
     position: relative;
