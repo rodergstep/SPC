@@ -1,0 +1,112 @@
+// PSEUDOCLASSES FOR LINKS
+@mixin links ($link, $visited, $hover, $active) {
+    & {
+        color: $link;
+
+        &:visited {
+            color: $visited;
+        }
+
+        &:hover {
+            color: $hover;
+        }
+
+        &:active,
+        &:focus {
+            color: $active;
+        }
+    }
+}
+// USE
+
+a {
+    @include links(orange, blue, yellow, teal);
+}
+// Clearfix
+
+%clearfix {
+    *zoom: 1;
+
+    &:after,
+    &:before {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+Usage .container-with-floated-children {
+    @extend %clearfix;
+}
+// responsive-ratio
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    }
+    @else {
+        padding-top: $padding;
+    }
+}
+// TOOLTIP
+@mixin hui_tooltip($content: attr(data-tooltip), $direction: top) {
+    position: relative;
+
+    &:after,
+    &:before {
+        display: none;
+        z-index: 98;
+    }
+
+    &:hover {
+        &:after {
+            // for text bubble
+            content: $content;
+            display: block;
+            position: absolute;
+            height: 12px; // (makes total height including padding 22px)
+            padding: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            color: #fff;
+            @include text-shadow(1px 1px #000);
+            background-color: #222;
+        }
+        @if ($direction == 'top') {
+            &:before {
+                @include triangle(down, 6px, #222);
+                top: -6px;
+                margin-top: 0;
+                left: 47%;
+            }
+
+            &:after {
+                top: -28px;
+                left: 47%;
+                margin-left: -20px;
+            }
+        }
+        @else if ($direction == 'bottom') {
+            &:before {
+                @include triangle(up, 6px, #222);
+                top: auto;
+                margin-top: 0;
+                bottom: -6px;
+                left: 47%;
+            }
+
+            &:after {
+                bottom: -28px;
+                left: 47%;
+                margin-left: -20px;
+            }
+        }
+    }
+}
