@@ -110,3 +110,10 @@ Usage .container-with-floated-children {
         padding-top: $padding;
     }
 }
+// push--auto
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
