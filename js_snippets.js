@@ -5,3 +5,6 @@
 // function isNumeric(n) {
 //  return !isNaN(parseFloat(n)) && isFinite(n)
 // }
+//________________________________________________________________
+//Повністю клонувати масив:
+//for (var i = 0; i < arr.length; i++) arr2[i] = arr[i];
