@@ -26,3 +26,39 @@ __________________________________________________________________
 function sorting() {
     return Math.random() - 0.5;
 }
+__________________________________________________________________
+Пошук найбільш раннього журналу в масиві:
+function Journal(date) {
+  this.date = date;
+
+  this.formatDate = function(date) {
+    return date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
+  };
+
+  this.getTitle = function() {
+    return "Выпуск от " + this.formatDate(this.date);
+  };
+
+}
+
+Journal.compare = function(journalA, journalB) {
+  return journalA.date - journalB.date;
+};
+
+// использование:
+var journals = [
+  new Journal(new Date(2012, 1, 1)),
+  new Journal(new Date(2012, 0, 1)),
+  new Journal(new Date(2011, 11, 1))
+];
+
+function findMin(journals) {
+  var min = 0;
+  for (var i = 0; i < journals.length; i++) {
+    // используем статический метод
+    if (Journal.compare(journals[min], journals[i]) > 0) min = i;
+  }
+  return journals[min];
+}
+
+alert( findMin(journals).getTitle() );
