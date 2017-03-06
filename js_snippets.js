@@ -62,3 +62,15 @@ function findMin(journals) {
 }
 
 alert( findMin(journals).getTitle() );
+_________________________________________________________________
+
+var toString = {}.toString;
+
+var arr = [1, 2];
+alert( toString.call(arr) ); // [object Array]
+
+var date = new Date;
+alert( toString.call(date) ); // [object Date]
+
+var user = { name: "Вася" };
+alert( toString.call(user) ); // [object Object]
