@@ -27,7 +27,6 @@ function sorting() {
     return Math.random() - 0.5;
 }
 __________________________________________________________________
-__________________________________________________________________
 Пошук найбільш раннього журналу в масиві:
 function Journal(date) {
   this.date = date;
@@ -64,7 +63,6 @@ function findMin(journals) {
 
 alert( findMin(journals).getTitle() );
 _________________________________________________________________
-
 Функція, що перевіряє тип:
 function getClass(obj) {
   return {}.toString.call(obj).slice(8, -1);
