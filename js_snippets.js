@@ -107,6 +107,6 @@ try {
 }
 ______________________________________________________________
 Window:
-DOM
-BOM
-Javascript
+DOM (document...)
+BOM (navigator, screen, location, frames, history, XMLHttpRequest)
+Javascript (Object, Array, Function...)
