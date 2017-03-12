@@ -1,3 +1,10 @@
+Семейство методов для вставки HTML/элемента/текста в произвольное место документа:
+
+elem.insertAdjacentHTML(where, html)
+elem.insertAdjacentElement(where, node)
+elem.insertAdjacentText(where, text)
+
+
 Window:
 DOM (document...)
 BOM (navigator, screen, location, frames, history, XMLHttpRequest)
