@@ -117,3 +117,10 @@ ______________________________________________________________
 elem.insertAdjacentHTML(where, html)
 elem.insertAdjacentElement(where, node)
 elem.insertAdjacentText(where, text)
+
+_________________________
+Координаты
+
+относительно окна: elem.getBoundingClientRect()
+относительно документа: elem.getBoundingClientRect() + прокрутка страницы
+получить элемент по координатам: document.elementFromPoint(clientX, clientY)
