@@ -117,5 +117,3 @@ ______________________________________________________________
 elem.insertAdjacentHTML(where, html)
 elem.insertAdjacentElement(where, node)
 elem.insertAdjacentText(where, text)
-
-_________________________
