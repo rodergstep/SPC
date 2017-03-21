@@ -3,6 +3,11 @@ DOM (document...)
 BOM (navigator, screen, location, frames, history, XMLHttpRequest)
 Javascript (Object, Array, Function...)
 _________________________________________________________________
+Window:
+DOM (document...)
+BOM (navigator, screen, location, frames, history, XMLHttpRequest)
+Javascript (Object, Array, Function...)
+_________________________________________________________________
 Випадкове ціле число від min до max включно:
 var rand = min + Math.floor(Math.random() * (max + 1 - min));
 _______________________________________________________________
