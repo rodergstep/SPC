@@ -1,3 +1,5 @@
+snippets
+
 Window:
 DOM (document...)
 BOM (navigator, screen, location, frames, history, XMLHttpRequest)
